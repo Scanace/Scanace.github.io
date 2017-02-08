@@ -12,43 +12,50 @@ h2
 h3
   font-size: 20px
 
-.loading
+.loadingFrame
   position: fixed
   top: 0
   left: 0
   right: 0
   bottom: 0
   background-color: #222
-  div
+  .table
     position: absolute
     display: table
     width: 100%
     height: 100%
-    p
+    .table-cell
       display: table-cell
       vertical-align: middle
       text-align: center
-      height: 200px
+      p
+        margin: 0
 
-      text-transform: uppercase
-      font-weight: bold
-      font-size: 200px
-      color: #737373
+        text-transform: uppercase
+        font-weight: bold
+        color: #929191
+        opacity: 0
+        -webkit-animation: unknown
+        animation: unknown
 
-      -webkit-animation: randomColor 5s infinite
-      animation: randomColor 5s infinite
+      p#firstAppear
+        font-size: 150px
+      p#secondAppear
+        font-size: 70px
 
 
 @font-face
   font-family: 'Futura PT Light'
   src: url('../../libs/fonts/FuturaPTLight.otf')
 
-@keyframes randomColor
-  25%
-    color: #428542
-  50%
-    color: #326363
-  75%
-    color: #a67853
-  100%
-    color: #a65353
+@keyframes toOpacity
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+@keyframes fromOpacity
+  from
+    opacity: 1
+  to
+    opacity: 0

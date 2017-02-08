@@ -16,7 +16,7 @@ h3 {
   font-size: 20px;
 }
 
-.loading {
+.loadingFrame {
   position: fixed;
   top: 0;
   left: 0;
@@ -25,24 +25,35 @@ h3 {
   background-color: #222;
 }
 
-.loading div {
+.loadingFrame .table {
   position: absolute;
   display: table;
   width: 100%;
   height: 100%;
 }
 
-.loading div p {
+.loadingFrame .table .table-cell {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
-  height: 200px;
+}
+
+.loadingFrame .table .table-cell p {
+  margin: 0;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 200px;
-  color: #737373;
-  -webkit-animation: randomColor 5s infinite;
-  animation: randomColor 5s infinite;
+  color: #929191;
+  opacity: 0;
+  -webkit-animation: unknown;
+  animation: unknown;
+}
+
+.loadingFrame .table .table-cell p#firstAppear {
+  font-size: 150px;
+}
+
+.loadingFrame .table .table-cell p#secondAppear {
+  font-size: 70px;
 }
 
 @font-face {
@@ -50,17 +61,20 @@ h3 {
   src: url("../../libs/fonts/FuturaPTLight.otf");
 }
 
-@keyframes randomColor {
-  25% {
-    color: #428542;
+@keyframes toOpacity {
+  from {
+    opacity: 0;
   }
-  50% {
-    color: #326363;
+  to {
+    opacity: 1;
   }
-  75% {
-    color: #a67853;
+}
+
+@keyframes fromOpacity {
+  from {
+    opacity: 1;
   }
-  100% {
-    color: #a65353;
+  to {
+    opacity: 0;
   }
 }
