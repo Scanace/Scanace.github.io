@@ -25,8 +25,8 @@ function secondAppear(){
 function fadeOutLoadingFrame(){
   loadingFrame = document.getElementById('loadingFrame');
   setTimeout(function(){
-    loadingFrame.style.WebkitAnimation = 'fromOpacity 2s';
-    loadingFrame.style.animation = 'fromOpacity 2s';
+    loadingFrame.style.WebkitAnimation = 'moveOut 2s';
+    loadingFrame.style.animation = 'moveOut 2s';
     secondAppear.style.opacity = '0';
     setTimeout(function(){
       loadingFrame.style.display ='none';
