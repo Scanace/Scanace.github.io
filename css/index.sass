@@ -23,14 +23,22 @@ body
 
   margin: 50px auto
 
-  -webkit-box-shadow: 0px 15px 20px 0px rgba(0,0,0,0.5)
-  -moz-box-shadow: 0px 15px 20px 0px rgba(0,0,0,0.5)
-  box-shadow: 0px 15px 20px 0px rgba(0,0,0,0.5)
-
+  -webkit-box-shadow: 0px 30px 35px 5px rgba(0,0,0,0.5)
+  -moz-box-shadow: 0px 30px 35px 5px rgba(0,0,0,0.5)
+  box-shadow: 0px 30px 35px 5px rgba(0,0,0,0.4)
+  overflow: hidden
+  cursor: pointer
 
   img
     position: absolute
-    margin-left: 50%
+    left: 50%
+    transform: translateX(-50%)
+    width: auto
+    height: 100%
+
+  video
+    position: absolute
+    left: 50%
     transform: translateX(-50%)
     width: auto
     height: 100%
@@ -50,6 +58,9 @@ body
     -ms-text-orientation: upright
     text-orientation: upright
 
+video::-webkit-media-controls
+    display:none !important
+
 @media (min-width: 1049px)
     .row
       position: fixed
@@ -61,10 +72,10 @@ body
         float: left
 
         .card
-          width: 300px
+          width: 80%
 
 @media (min-width: 1199px)
     .row
       .col
         .card
-          width: 350px
+          width: 80%

@@ -7,20 +7,34 @@ html(lang='it')
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1')
     link(rel='stylesheet' type='text/css' href='css/index.css')
+    
   body
     
     .row
       .col
         .card
-          img(alt='Anime', src='images/indexAnim.png')
+          video.videoAnime(loop preload='none' poster='media/images/indexAnime.jpg')
+            source(src='media/videos/indexAnime.mp4' type='video/mp4')
+            source(src="media/videos/indexAnime.webm" type="video/webm")
+            | I'm sorry; your browser doesn't support HTML5 video in WebM with VP8/VP9 or MP4 with H.264.
           p Anime
+          
       .col
         .card
-          img(alt='Manga', src='images/indexMang.jpg')
+          video.videoManga(loop preload='none' poster='media/images/indexManga.jpg')
+            source(src='media/videos/indexManga.mp4' type='video/mp4')
+            source(src="media/videos/indexManga.webm" type="video/webm")
+            | I'm sorry; your browser doesn't support HTML5 video in WebM with VP8/VP9 or MP4 with H.264.
           p Manga
+          
       .col
         .card
-          img(alt='Videogames', src='images/indexVideogame.jpg')
+          video.videoManga(loop preload='none' poster='media/images/indexVideogames.jpg')
+            source(src='media/videos/indexVideogames.mp4' type='video/mp4')
+            source(src="media/videos/indexVideogames.webm" type="video/webm")
+            | I'm sorry; your browser doesn't support HTML5 video in WebM with VP8/VP9 or MP4 with H.264.
           p Videogames
           
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+    script(src='js/index.js')  
           
