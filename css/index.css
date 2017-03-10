@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  background-color: lightblue;
 }
 
 .row {
@@ -22,8 +21,10 @@ body {
   width: 80%;
   min-width: 300px;
   height: 550px;
-  background-color: lightgreen;
   margin: 50px auto;
+  -webkit-box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.5);
 }
 
 .card img {
@@ -37,8 +38,15 @@ body {
 .card p {
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  -moz-writing-mode: vertical-rl;
+  -ms-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+  -webkit-text-orientation: upright;
+  -moz-text-orientation: upright;
+  -ms-text-orientation: upright;
+  text-orientation: upright;
 }
 
 @media (min-width: 1049px) {
