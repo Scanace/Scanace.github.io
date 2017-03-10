@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  background-color: lightblue;
+}
+
+.row {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: inherit;
+  z-index: 10;
+}
+
+.col {
+  position: relative;
+  width: 100%;
+  margin: inherit;
+}
+
+.card {
+  position: relative;
+  width: 80%;
+  min-width: 300px;
+  height: 550px;
+  background-color: lightgreen;
+  margin: 50px auto;
+}
+
+.card img {
+  position: absolute;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: 100%;
+}
+
+.card p {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 1049px) {
+  .row {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .row .col {
+    width: 33.3%;
+    float: left;
+  }
+  .row .col .card {
+    width: 300px;
+  }
+}
+
+@media (min-width: 1199px) {
+  .row {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .row .col {
+    width: 33.3%;
+    float: left;
+  }
+  .row .col .card {
+    width: 350px;
+  }
+}
