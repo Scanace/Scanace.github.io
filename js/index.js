@@ -1,10 +1,5 @@
-$('video')[0].volume = 0.2;
+$('video')[0].volume = 0.3;
 
-$(document).ready(function(){
-    $('video').hover(function(){
-        $(this).get(0).play();
-        }, function(){
-        $(this).get(0).pause();
-        $(this).get(0).load();
-    });
+$('video').bind('ended', function(){
+   $(this).fadeOut()
 })

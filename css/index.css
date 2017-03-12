@@ -1,5 +1,25 @@
 body {
   margin: 0;
+  font-family: FuturaPT;
+}
+
+.backgroundVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: -100;
+  background: url("../media/images/indexBackground.jpg") center center/cover no-repeat;
+}
+
+.backgroundVideo video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .row {
@@ -7,16 +27,16 @@ body {
   width: 100%;
   height: auto;
   margin: inherit;
-  z-index: 10;
+  z-index: 100;
 }
 
-.col {
+.row .col {
   position: relative;
   width: 100%;
   margin: inherit;
 }
 
-.card {
+.row .col .wrapper {
   position: relative;
   width: 80%;
   min-width: 300px;
@@ -24,39 +44,17 @@ body {
   margin: 50px auto;
   -webkit-box-shadow: 0px 30px 35px 5px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 30px 35px 5px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 30px 35px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 30px 35px 5px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   cursor: pointer;
 }
 
-.card img {
+.row .col .wrapper img {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   width: auto;
   height: 100%;
-}
-
-.card video {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: auto;
-  height: 100%;
-}
-
-.card p {
-  position: absolute;
-  top: 0;
-  -ms-writing-mode: tb-rl;
-  -webkit-writing-mode: vertical-rl;
-  -moz-writing-mode: vertical-rl;
-  -ms-writing-mode: vertical-rl;
-  writing-mode: vertical-rl;
-  -webkit-text-orientation: upright;
-  -moz-text-orientation: upright;
-  -ms-text-orientation: upright;
-  text-orientation: upright;
 }
 
 video::-webkit-media-controls {
@@ -73,13 +71,27 @@ video::-webkit-media-controls {
     width: 33.3%;
     float: left;
   }
-  .row .col .card {
+  .row .col .wrapper {
     width: 80%;
   }
 }
 
 @media (min-width: 1199px) {
-  .row .col .card {
+  .row .col .wrapper {
     width: 80%;
+  }
+}
+
+@media (min-aspect-ratio: 16 / 9) {
+  .backgroundVideo video {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16 / 9) {
+  .backgroundVideo video {
+    width: 300%;
+    left: -100%;
   }
 }

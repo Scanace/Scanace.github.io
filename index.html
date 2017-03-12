@@ -7,33 +7,21 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
   </head>
   <body>
+    <div class="backgroundVideo">
+      <video autoplay poster="media/images/indexBackground.jpg">
+        <source src="media/videos/indexBackground.mp4" type="video/mp4">
+        <source src="media/videos/indexBackground.webm" type="video/webm"><img alt="backgroundImage" src="media/images/indexBackground.jpg">
+      </video>
+    </div>
     <div class="row">
       <div class="col">
-        <div class="card">
-          <video loop preload="none" poster="media/images/indexAnime.jpg" class="videoAnime">
-            <source src="media/videos/indexAnime.mp4" type="video/mp4">
-            <source src="media/videos/indexAnime.webm" type="video/webm">I'm sorry; your browser doesn't support HTML5 video in WebM with VP8/VP9 or MP4 with H.264.
-          </video>
-          <p>Anime</p>
-        </div>
+        <div class="wrapper"><img alt="anime" src="media/images/indexAnime.jpg"></div>
       </div>
       <div class="col">
-        <div class="card">
-          <video loop preload="none" poster="media/images/indexManga.jpg" class="videoManga">
-            <source src="media/videos/indexManga.mp4" type="video/mp4">
-            <source src="media/videos/indexManga.webm" type="video/webm">I'm sorry; your browser doesn't support HTML5 video in WebM with VP8/VP9 or MP4 with H.264.
-          </video>
-          <p>Manga</p>
-        </div>
+        <div class="wrapper"><img alt="manga" src="media/images/indexManga.jpg"></div>
       </div>
       <div class="col">
-        <div class="card">
-          <video loop preload="none" poster="media/images/indexVideogames.jpg" class="videoManga">
-            <source src="media/videos/indexVideogames.mp4" type="video/mp4">
-            <source src="media/videos/indexVideogames.webm" type="video/webm">I'm sorry; your browser doesn't support HTML5 video in WebM with VP8/VP9 or MP4 with H.264.
-          </video>
-          <p>Videogames</p>
-        </div>
+        <div class="wrapper"><img alt="games" src="media/images/indexGames.jpg"></div>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

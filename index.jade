@@ -9,31 +9,24 @@ html(lang='it')
     link(rel='stylesheet' type='text/css' href='css/index.css')
     
   body
-    
+    .backgroundVideo
+      video(autoplay poster='media/images/indexBackground.jpg')
+        source(src='media/videos/indexBackground.mp4' type='video/mp4')
+        source(src="media/videos/indexBackground.webm" type="video/webm")
+        img(alt='backgroundImage' src="media/images/indexBackground.jpg")
+        
     .row
       .col
-        .card
-          video.videoAnime(loop preload='none' poster='media/images/indexAnime.jpg')
-            source(src='media/videos/indexAnime.mp4' type='video/mp4')
-            source(src="media/videos/indexAnime.webm" type="video/webm")
-            | I'm sorry; your browser doesn't support HTML5 video in WebM with VP8/VP9 or MP4 with H.264.
-          p Anime
+        .wrapper
+          img(alt='anime' src='media/images/indexAnime.jpg')
           
       .col
-        .card
-          video.videoManga(loop preload='none' poster='media/images/indexManga.jpg')
-            source(src='media/videos/indexManga.mp4' type='video/mp4')
-            source(src="media/videos/indexManga.webm" type="video/webm")
-            | I'm sorry; your browser doesn't support HTML5 video in WebM with VP8/VP9 or MP4 with H.264.
-          p Manga
+        .wrapper
+          img(alt='manga' src='media/images/indexManga.jpg')
           
       .col
-        .card
-          video.videoManga(loop preload='none' poster='media/images/indexVideogames.jpg')
-            source(src='media/videos/indexVideogames.mp4' type='video/mp4')
-            source(src="media/videos/indexVideogames.webm" type="video/webm")
-            | I'm sorry; your browser doesn't support HTML5 video in WebM with VP8/VP9 or MP4 with H.264.
-          p Videogames
+        .wrapper
+          img(alt='games' src='media/images/indexGames.jpg')
           
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
     script(src='js/index.js')  
