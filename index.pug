@@ -1,4 +1,4 @@
-//output:index.html, pretty:false
+//output:index.html, pretty:true
 
 doctype html
 html(lang='en')
@@ -6,15 +6,13 @@ html(lang='en')
     include includes/head.jade
       
   body
-    
-    #intro.row
-      .col.col-12
-        .logo
-          h1 AL
-        .loader
-          
-    #content.row
-      .col.col-12
-        Lorem Ipsum
+    .introWrapper
+      svg#introAnimation(xmlns='http://www.w3.org/2000/svg', version='1.1', viewbox='0 0 500 500', preserveAspectRatio="none")
+        g#logo
+          path.stroke(d='M144 425 L250 112 L358 425', data-name='A', fill-opacity='0')
+          path.stroke(d='M205 44 L205 401 L297 402', data-name='L', fill-opacity='0')
+        g#loader
+          circle#ciao.stroke.loader(cx='250', cy='250', r='215', transform='rotate(180 250 250)')
+          circle#ciao2.stroke.loader.gg(cx='250', cy='250', r='215', transform='rotate(180 250 250)')
         
     include includes/scripts.jade

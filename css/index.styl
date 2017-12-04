@@ -1,65 +1,74 @@
-// out: index.css, compress: true
+// out: index.css, compress: false
 
-.fadeOut
-  opacity 0
-  transform scale(2)
+$introWrapperIndex = 1000
 
-#intro
+.introWrapper
   position fixed
   top:0;right:0;bottom:0;left:0;
+  z-index $introWrapperIndex
+
   background-color #fff
-  transition 1s
-  z-index 1000
 
-  div
+  svg
     position absolute
-    top calc(50% - 75px)
-    left calc(50% - 75px)
-    width 150px
-    height 150px
+    top 50%
+    left 50%
+    width 100px
+    height 100px
 
-    text-align center
+    -webkit-transform translate(-50%, -50%)
+    -ms-transform translate(-50%, -50%)
+    -o-transform translate(-50%, -50%)
+    transform translate(-50%, -50%)
 
-    .logo
-      position absolute
-      width 150px
-      height 150px
+    path
+      display none
 
-      h1
-        margin 0
-        line-height 150px
+    .stroke
+      fill black
+      fill-opacity 0
+      stroke-opacity 0.3
+      stroke #212121
+      stroke-width 20px
+      stroke-linecap butt
+      stroke-linejoin miter
 
-        color #212121
-        font-family FuturaPTLight
-        font-weight 300
+    .animationLogoA
+      display inline
+
+      -webkit-animation 1s ease-out 1s 1 normal forwards running
+      -moz-animation 1s ease-out 1s 1 normal forwards running
+      animation 1s ease-out 1s 1 normal forwards running
+
+    .animationLogoL
+      display inline
+      -webkit-animation 1s ease-out 2s 1 normal forwards running
+      -moz-animation 1s ease-out 2s 1 normal forwards running
+      animation 1s ease-out 2s 1 normal forwards running
+
+
 
     .loader
-      position absolute
-      width 150px
-      height 150px
+      stroke-width 20px
+      stroke-dasharray 1350.88px
+      stroke-dashoffset 1350.88px
 
-      border #212121
+      -webkit-animation loading 2s infinite linear
+      -moz-animation loading 2s infinite linear
+      animation loading 2s infinite linear
 
-      border-right solid
-      border-bottom solid
+    .gg
+      display none
+      -webkit-animation none
+      -moz-animation none
+      animation none
 
-      -webkit-border-radius 50%
-      -moz-border-radius 50%
-      border-radius 50%
-
-      -webkit-animation rotation 1s infinite linear
-      -moz-animation rotation 1s infinite linear
-      animation rotation 1s infinite linear
-
-#content
-  display none
-
-@keyframes rotation
+@keyframes loading
   from
-    transform rotate(0deg)
+    stroke-dashoffset 1350.88px
 
   to
-    transform rotate(360deg)
+    stroke-dashoffset -1350.88px
 
 @font-face
     font-family FuturaPTLight

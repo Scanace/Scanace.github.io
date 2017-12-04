@@ -1,1 +1,94 @@
-.fadeOut{opacity:0;transform:scale(2)}#intro{position:fixed;top:0;right:0;bottom:0;left:0;background-color:#fff;transition:1s;z-index:1000;}#intro div{position:absolute;top:calc(50% - 75px);left:calc(50% - 75px);width:150px;height:150px;text-align:center;}#intro div .logo{position:absolute;width:150px;height:150px;}#intro div .logo h1{margin:0;line-height:150px;color:#212121;font-family:FuturaPTLight;font-weight:300}#intro div .loader{position:absolute;width:150px;height:150px;border:#212121;border-right:solid;border-bottom:solid;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;-webkit-animation:rotation 1s infinite linear;-moz-animation:rotation 1s infinite linear;animation:rotation 1s infinite linear}#content{display:none}@font-face{font-family:FuturaPTLight;src:url("../assets/fonts/FuturaPTLight.otf") format("opentype")}@-moz-keyframes rotation{from{transform:rotate(0)}to{transform:rotate(360deg)}}@-webkit-keyframes rotation{from{transform:rotate(0)}to{transform:rotate(360deg)}}@-o-keyframes rotation{from{transform:rotate(0)}to{transform:rotate(360deg)}}@keyframes rotation{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.introWrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: #fff;
+}
+.introWrapper svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.introWrapper svg path {
+  display: none;
+}
+.introWrapper svg .stroke {
+  fill: #000;
+  fill-opacity: 0;
+  stroke-opacity: 0.3;
+  stroke: #212121;
+  stroke-width: 20px;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+}
+.introWrapper svg .animationLogoA {
+  display: inline;
+  -webkit-animation: 1s ease-out 1s 1 normal forwards running;
+  -moz-animation: 1s ease-out 1s 1 normal forwards running;
+  animation: 1s ease-out 1s 1 normal forwards running;
+}
+.introWrapper svg .animationLogoL {
+  display: inline;
+  -webkit-animation: 1s ease-out 2s 1 normal forwards running;
+  -moz-animation: 1s ease-out 2s 1 normal forwards running;
+  animation: 1s ease-out 2s 1 normal forwards running;
+}
+.introWrapper svg .loader {
+  stroke-width: 20px;
+  stroke-dasharray: 1350.88px;
+  stroke-dashoffset: 1350.88px;
+  -webkit-animation: loading 2s infinite linear;
+  -moz-animation: loading 2s infinite linear;
+  animation: loading 2s infinite linear;
+}
+.introWrapper svg .gg {
+  display: none;
+  -webkit-animation: none;
+  -moz-animation: none;
+  animation: none;
+}
+@font-face {
+  font-family: FuturaPTLight;
+  src: url("../assets/fonts/FuturaPTLight.otf") format("opentype");
+}
+@-moz-keyframes loading {
+  from {
+    stroke-dashoffset: 1350.88px;
+  }
+  to {
+    stroke-dashoffset: -1350.88px;
+  }
+}
+@-webkit-keyframes loading {
+  from {
+    stroke-dashoffset: 1350.88px;
+  }
+  to {
+    stroke-dashoffset: -1350.88px;
+  }
+}
+@-o-keyframes loading {
+  from {
+    stroke-dashoffset: 1350.88px;
+  }
+  to {
+    stroke-dashoffset: -1350.88px;
+  }
+}
+@keyframes loading {
+  from {
+    stroke-dashoffset: 1350.88px;
+  }
+  to {
+    stroke-dashoffset: -1350.88px;
+  }
+}
