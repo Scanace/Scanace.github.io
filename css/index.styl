@@ -1,6 +1,7 @@
 // out: index.css, compress: false
 
 $introWrapperIndex = 1000
+$loaderAnimationDuration = 2000ms
 
 .introWrapper
   position fixed
@@ -21,49 +22,25 @@ $introWrapperIndex = 1000
     -o-transform translate(-50%, -50%)
     transform translate(-50%, -50%)
 
-    path
-      display none
+    .loader
+      stroke-dasharray 1350.88px
+      stroke-dashoffset 1350.88px
+
+      -webkit-animation loaderAnimation $loaderAnimationDuration linear infinite
+      -moz-animation loaderAnimation $loaderAnimationDuration linear infinite
+      animation loaderAnimation $loaderAnimationDuration linear infinite
 
     .stroke
-      fill black
-      fill-opacity 0
-      stroke-opacity 0.3
+      fill none
       stroke #212121
       stroke-width 20px
       stroke-linecap butt
       stroke-linejoin miter
 
-    .animationLogoA
-      display inline
-
-      -webkit-animation 1s ease-out 1s 1 normal forwards running
-      -moz-animation 1s ease-out 1s 1 normal forwards running
-      animation 1s ease-out 1s 1 normal forwards running
-
-    .animationLogoL
-      display inline
-      -webkit-animation 1s ease-out 2s 1 normal forwards running
-      -moz-animation 1s ease-out 2s 1 normal forwards running
-      animation 1s ease-out 2s 1 normal forwards running
-
-
-
-    .loader
-      stroke-width 20px
-      stroke-dasharray 1350.88px
-      stroke-dashoffset 1350.88px
-
-      -webkit-animation loading 2s infinite linear
-      -moz-animation loading 2s infinite linear
-      animation loading 2s infinite linear
-
-    .gg
+    path
       display none
-      -webkit-animation none
-      -moz-animation none
-      animation none
 
-@keyframes loading
+@keyframes loaderAnimation
   from
     stroke-dashoffset 1350.88px
 

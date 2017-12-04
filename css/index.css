@@ -18,49 +18,28 @@
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-.introWrapper svg path {
-  display: none;
+.introWrapper svg .loader {
+  stroke-dasharray: 1350.88px;
+  stroke-dashoffset: 1350.88px;
+  -webkit-animation: loaderAnimation 2000ms linear infinite;
+  -moz-animation: loaderAnimation 2000ms linear infinite;
+  animation: loaderAnimation 2000ms linear infinite;
 }
 .introWrapper svg .stroke {
-  fill: #000;
-  fill-opacity: 0;
-  stroke-opacity: 0.3;
+  fill: none;
   stroke: #212121;
   stroke-width: 20px;
   stroke-linecap: butt;
   stroke-linejoin: miter;
 }
-.introWrapper svg .animationLogoA {
-  display: inline;
-  -webkit-animation: 1s ease-out 1s 1 normal forwards running;
-  -moz-animation: 1s ease-out 1s 1 normal forwards running;
-  animation: 1s ease-out 1s 1 normal forwards running;
-}
-.introWrapper svg .animationLogoL {
-  display: inline;
-  -webkit-animation: 1s ease-out 2s 1 normal forwards running;
-  -moz-animation: 1s ease-out 2s 1 normal forwards running;
-  animation: 1s ease-out 2s 1 normal forwards running;
-}
-.introWrapper svg .loader {
-  stroke-width: 20px;
-  stroke-dasharray: 1350.88px;
-  stroke-dashoffset: 1350.88px;
-  -webkit-animation: loading 2s infinite linear;
-  -moz-animation: loading 2s infinite linear;
-  animation: loading 2s infinite linear;
-}
-.introWrapper svg .gg {
+.introWrapper svg path {
   display: none;
-  -webkit-animation: none;
-  -moz-animation: none;
-  animation: none;
 }
 @font-face {
   font-family: FuturaPTLight;
   src: url("../assets/fonts/FuturaPTLight.otf") format("opentype");
 }
-@-moz-keyframes loading {
+@-moz-keyframes loaderAnimation {
   from {
     stroke-dashoffset: 1350.88px;
   }
@@ -68,7 +47,7 @@
     stroke-dashoffset: -1350.88px;
   }
 }
-@-webkit-keyframes loading {
+@-webkit-keyframes loaderAnimation {
   from {
     stroke-dashoffset: 1350.88px;
   }
@@ -76,7 +55,7 @@
     stroke-dashoffset: -1350.88px;
   }
 }
-@-o-keyframes loading {
+@-o-keyframes loaderAnimation {
   from {
     stroke-dashoffset: 1350.88px;
   }
@@ -84,7 +63,7 @@
     stroke-dashoffset: -1350.88px;
   }
 }
-@keyframes loading {
+@keyframes loaderAnimation {
   from {
     stroke-dashoffset: 1350.88px;
   }

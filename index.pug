@@ -8,11 +8,16 @@ html(lang='en')
   body
     .introWrapper
       svg#introAnimation(xmlns='http://www.w3.org/2000/svg', version='1.1', viewbox='0 0 500 500', preserveAspectRatio="none")
+        g
+          circle#loader.stroke.loader(cx='250', cy='250', r='215', transform='rotate(180 250 250)')
         g#logo
-          path.stroke(d='M144 425 L250 112 L358 425', data-name='A', fill-opacity='0')
-          path.stroke(d='M205 44 L205 401 L297 402', data-name='L', fill-opacity='0')
-        g#loader
-          circle#ciao.stroke.loader(cx='250', cy='250', r='215', transform='rotate(180 250 250)')
-          circle#ciao2.stroke.loader.gg(cx='250', cy='250', r='215', transform='rotate(180 250 250)')
+          path.stroke(d='M137 436 L250 112 L365 436', fill-opacity='0')
+          path.stroke(d='M205 44 L205 402 L297 402', fill-opacity='0')
+      
+    header
+      
+    article
+      
+    footer  
         
     include includes/scripts.jade

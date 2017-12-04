@@ -1,98 +1,94 @@
 $(window).on('load', function (e) {
   if (sessionStorage.getItem('websiteVisited') === null) {
-        sessionStorage.setItem('websiteVisited', true);
+    finishLoading(true);
+    console.log('notVisited');
+    sessionStorage.setItem('websiteVisited', true);
   }
   else {
-      //
+    console.log('visited');
+    finishLoading(false);
   }
-  var strokeoffset = $('#ciao').css('stroke-dashoffset');
-  var length = $('#ciao').attr('r')*2*Math.PI;
-  var strokeoffset = strokeoffset.substring(0, strokeoffset.length-2);
-  var tempoMancante = 0;
-  if(strokeoffset >= 0){
-    if(strokeoffset === 0){
-      tempoMancante = 2000;
+});
+
+function finishLoading(logoAnimation){
+  var loader = $('#loader');
+
+  var loaderPathLength = 2*(Math.PI)*$(loader).attr('r');
+  var loaderStrokeDashOffset = $(loader).css('stroke-dashoffset').replace(/[^-\d\.]/g, '');
+
+  if(loaderStrokeDashOffset >= 0){
+    if(loaderStrokeDashOffset === 0){
+      var missingTime = 2000;
     }else{
-      tempoMancante = 2000+((1000*strokeoffset)/length);
+      var missingTime = 2000+((1000*loaderStrokeDashOffset)/loaderPathLength);
     }
   }else{
-    tempoMancante = 1000+(1000*(length-(Math.abs(strokeoffset)))/length);
+    var missingTime = 1000+(1000*(loaderPathLength-(Math.abs(loaderStrokeDashOffset)))/loaderPathLength);
   }
-  $('#ciao').css({
-    'display': 'none'
-  });
-  $('#ciao2').css({
-    'display': 'inline',
-    'stroke-dasharray': length+'px',
-    'stroke-dashoffset': strokeoffset+'px',
-    'animation': 'animationS '+tempoMancante+'ms linear 0s 1 normal forwards running'
-  });
 
-  $('#ciao2').addClass('ggs');
+  $(loader).css({
+    'stroke-dasharray': loaderPathLength+'px',
+    'stroke-dashoffset': loaderStrokeDashOffset+'px',
+    'animation': 'animationS '+missingTime+'ms linear 1 forwards'
+  });
 
   var cssAnimation = document.createElement('style');
+  cssAnimation.id = 'intro';
   cssAnimation.type = 'text/css';
+
   var rules = document.createTextNode(
-    '.ggs{'+
-      '-webkit-animation: animationS '+tempoMancante+'ms ease-in 0s 1 normal forwards running;'+
-      '-moz-animation: animationS '+tempoMancante+'ms ease-in 0s 1 normal forwards running;'+
-      'animation: animationS '+tempoMancante+'ms ease-in 0s 1 normal forwards running;'+
-    '}'+
     '@-webkit-keyframes animationS{'+
-      'from{stroke-dashoffset:'+ strokeoffset +'px;}'+
-      'to{stroke-dashoffset:'+ -(length*2) +'px;}'+
+      'from{stroke-dashoffset:'+ loaderStrokeDashOffset +'px;}'+
+      'to{stroke-dashoffset:'+ -(loaderPathLength*2) +'px;}'+
     '}'+
     '@-moz-keyframes animationS{'+
-      'from{stroke-dashoffset:'+ strokeoffset +'px;}'+
-      'to{stroke-dashoffset:'+ -(length*2) +'px;}'+
+      'from{stroke-dashoffset:'+ loaderStrokeDashOffset +'px;}'+
+      'to{stroke-dashoffset:'+ -(loaderPathLength*2) +'px;}'+
     '}'+
     '@keyframes animationS{'+
-      'from{stroke-dashoffset:'+ strokeoffset +'px;}'+
-      'to{stroke-dashoffset:'+ -(length*2) +'px;}'+
+      'from{stroke-dashoffset:'+ loaderStrokeDashOffset +'px;}'+
+      'to{stroke-dashoffset:'+ -(loaderPathLength*2) +'px;}'+
     '}'
   );
 
   cssAnimation.appendChild(rules);
+
+  if(true){
+    animateLogo(cssAnimation, missingTime);
+  }
+
   document.getElementsByTagName("head")[0].appendChild(cssAnimation);
-  animateLogo(tempoMancante);
-});
+}
 
-function animateLogo(tempoMancante){
+function animateLogo(cssAnimation, missingTime){
+  $('#logo').children().each(function(i){
+    var path = this;
+    var pathLength = path.getTotalLength();
 
-  var cssAnimation = document.createElement('style');
-  cssAnimation.type = 'text/css';
+    missingTime = parseFloat(missingTime)+(i*1000)+500;
 
-  $('#logo').children().each(function(){
-    var path = $(this)[0];
-    var length = path.getTotalLength();
-
-    var name = $(this).attr('data-name');
+    $(this).css({
+      'display':'inline',
+      'stroke-dasharray': pathLength +'px',
+      'stroke-dashoffset': pathLength +'px',
+      'animation': '1000ms ease-in '+missingTime+'ms 1 forwards animation'+i
+    });
 
     var rules = document.createTextNode(
-      '@-webkit-keyframes animation'+ name +'{'+
-        'from{stroke-dashoffset:'+ length +'px;}'+
+      '@-webkit-keyframes animation'+ i +'{'+
+        'from{stroke-dashoffset:'+ pathLength +'px;}'+
         'to{stroke-dashoffset:0.1px;}'+
       '}'+
-      '@-moz-keyframes animation'+ name +'{'+
-        'from{stroke-dashoffset:'+ length +'px;}'+
+      '@-moz-keyframes animation'+ i +'{'+
+        'from{stroke-dashoffset:'+ pathLength +'px;}'+
         'to{stroke-dashoffset:0.1px;}'+
       '}'+
-      '@keyframes animation'+ name +'{'+
-        'from{stroke-dashoffset:'+ length +'px;}'+
+      '@keyframes animation'+ i +'{'+
+        'from{stroke-dashoffset:'+ pathLength +'px;}'+
         'to{stroke-dashoffset:0.1px;}'+
       '}'
     );
-
     cssAnimation.appendChild(rules);
-
-    $(this).addClass('animationLogo'+name);
-
-    $(this).css({
-      'stroke-dasharray': length +'px',
-      'stroke-dashoffset': length +'px',
-      'animation-name': 'animation'+ name
-    });
-
   });
-  document.getElementsByTagName("head")[0].appendChild(cssAnimation);
+
 }
