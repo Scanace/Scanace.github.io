@@ -25,6 +25,7 @@ function finishLoading(logoAnimation){
   }else{
     var missingTime = 1000+(1000*(loaderPathLength-(Math.abs(loaderStrokeDashOffset)))/loaderPathLength);
   }
+  var missingTime = (1000*loaderStrokeDashOffset)/loaderPathLength
 
   $(loader).css({
     'stroke-dasharray': loaderPathLength+'px',
@@ -39,15 +40,15 @@ function finishLoading(logoAnimation){
   var rules = document.createTextNode(
     '@-webkit-keyframes animationS{'+
       'from{stroke-dashoffset:'+ loaderStrokeDashOffset +'px;}'+
-      'to{stroke-dashoffset:'+ -(loaderPathLength*2) +'px;}'+
+      'to{stroke-dashoffset: 0.1px;}'+
     '}'+
     '@-moz-keyframes animationS{'+
       'from{stroke-dashoffset:'+ loaderStrokeDashOffset +'px;}'+
-      'to{stroke-dashoffset:'+ -(loaderPathLength*2) +'px;}'+
+      'to{stroke-dashoffset: 0.1px;}'+
     '}'+
     '@keyframes animationS{'+
       'from{stroke-dashoffset:'+ loaderStrokeDashOffset +'px;}'+
-      'to{stroke-dashoffset:'+ -(loaderPathLength*2) +'px;}'+
+      'to{stroke-dashoffset: 0.1px;}'+
     '}'
   );
 
