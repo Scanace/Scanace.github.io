@@ -60,8 +60,8 @@ function finishLoading(logoAnimation){
 
   document.getElementsByTagName("head")[0].appendChild(cssAnimation);
   setTimeout(function(){
-    alert("Website currently under construction, please, return in a few weeks. Thanks you for the patience.");
-  }, missingTime+3000);
+    alert("Website currently under construction, please, return in a few weeks. Thank you for the patience.");
+  }, missingTime+4000);
 }
 
 function animateLogo(cssAnimation, missingTime){
