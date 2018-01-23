@@ -1,52 +1,23 @@
 // out: index.css, compress: true
 
-$introWrapperIndex = 1000
-$loaderAnimationDuration = 2000ms
+html
+  height 100%
 
-.introWrapper
+body
   position fixed
-  top:0;right:0;bottom:0;left:0;
-  z-index $introWrapperIndex
+  top 0; bottom 0; left 0; right 0;
+  background-image url('../assets/images/Website.png')
+  background-repeat no-repeat
+  background-size 100% 100%
 
-  background-color #fff
-
-  svg
-    position absolute
-    top 50%
-    left 50%
-    width 100px
-    height 100px
-
-    -webkit-transform translate(-50%, -50%)
-    -ms-transform translate(-50%, -50%)
-    -o-transform translate(-50%, -50%)
-    transform translate(-50%, -50%)
-
-    .loader
-      stroke-dasharray 1350.88px
-      stroke-dashoffset 4052.62px
-
-      -webkit-animation loaderAnimation $loaderAnimationDuration linear infinite
-      -moz-animation loaderAnimation $loaderAnimationDuration linear infinite
-      animation loaderAnimation $loaderAnimationDuration linear infinite
-
-    .stroke
-      fill none
-      stroke #212121
-      stroke-width 20px
-      stroke-linecap butt
-      stroke-linejoin miter
-
-    path
-      display none
-
-@keyframes loaderAnimation
-  from
-    stroke-dashoffset 4052.62px
-
-  to
-    stroke-dashoffset 1350.88px
+@media screen and (max-width: 600px)
+    body
+      background-image url('../assets/images/Website Mobile.png')
 
 @font-face
-    font-family FuturaPTLight
-    src url("../assets/fonts/FuturaPTLight.otf") format("opentype")
+    font-family FuturaLight
+    src url('../assets/fonts/Futura/FuturaPTLight.otf') format('opentype')
+
+@font-face
+    font-family Tangerine
+    src url('../assets/fonts/Futura/FuturaPTLight.ttf') format('truetype')
